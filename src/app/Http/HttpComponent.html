@@ -1,0 +1,30 @@
+
+<!--<div *ngFor="let n of arra">
+        <p> {{n.login}}</p>
+</div>-->
+<p>{{anusha|pipename}}</p>
+<input type="text" [(ngModel)]="input">
+<p>{{input}}</p>
+<p>{{inputnam}}</p>
+<button (click)= "countupdate()" >Add Button </button>
+        
+
+<form (ngSubmit)="formFunction(formobject)" #formobject="ngForm">
+
+    <div class="form-group">
+        <label for="user">User</label>
+        <input type="text" id="user" class="form-control" ngModel name="user">
+    </div>
+    <div class="form-group">
+        <label for="company"> Company </label>
+        <input type="text" id="company" class="form-control" ngModel name="company">
+    </div>
+    <button class="btn btn-primary"  type="submit" [disabled]="!formobject.valid" >Submit</button>
+</form>
+<form (ngSubmit)="ReactiveForm()"[formGroup]="userreact" >
+    <div class="form-group">
+        <label for="user"> User</label>
+        <input type="text" id="user" formControlName="user" class="form-control">
+    </div>
+    <button class="btn btn-primary"  type="submit" >Submit</button>
+</form>
